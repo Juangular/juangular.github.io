@@ -1,0 +1,328 @@
+:root{
+    --950: #023864;
+    --800: #005191;
+    --600: #0078da;
+    --400: #25b2ff;
+    --200: #b3e2ff;
+    --50: #eff8ff;
+    --sm: 16px;
+    --md: 20px;
+    --lg: 28px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    h1{
+        font-size: var(--lg);
+    }
+    h2{
+        font-size: var(--md);
+    }
+    h3{
+        font-size: var(--sm);
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+    position: fixed;
+    background: white;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    img{
+        height: 48px;
+        padding-left: 64px;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        column-gap: 16px;
+        padding-right: 64px;
+        a{
+            text-decoration: none;
+            color: var(--950);
+        }
+        a:hover{
+            padding: 4px;
+            border-radius: 4px;
+            border-bottom: 1px var(--950) solid;
+        }
+    }
+}
+.wsp-info{
+    height: 64px;
+    z-index: 99;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    .wsp{
+        height: 64px;
+    }
+}
+main{
+    position: relative;
+    top: 64px;
+    #Inicio{
+        height: 600px;
+        align-items: center;
+        display: flex;
+        justify-content: end;
+        color: var(--950);
+        background-image: url("/Assets/condominio5.jpg");
+        background-position: bottom;
+        background-attachment: fixed;
+        background-size: cover;
+        .title{
+            text-align: end;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: title 0.6s linear both;
+            width: 40%;
+            padding-right: 16px;
+            h2{
+                color: var(--800);
+            }
+            a{
+                text-decoration: none;
+                color: var(--950);
+                /* background: var(--950); */
+                padding: 8px;
+                width: 40%;
+                border-radius: 4px;
+                margin: 16px 0 0 64px;
+                text-align: center;
+                border: 1px solid;
+            }
+            a:hover{
+                color: var(--50);
+                background: var(--950);
+            }
+        }
+        .title{
+        }
+        img{
+            height: 300px;
+        }
+    }
+    #Especialidades{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        justify-content: center;
+        row-gap: 64px;
+        color: var(--950);
+        .especialidades{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 32px;
+            padding: 0 32px;
+            .card-especialidades{
+                /* animation: card-especialidades 0.6s linear ; */
+                .box{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 16px;
+                    .icon{
+                        width: 8px;
+                        height: 8px;
+                        background: var(--200);
+                    }
+                }
+            }
+        }
+    }
+    #Servicios{
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--950);
+        color: white;
+        flex-direction: column;
+        row-gap: 64px;
+        .servicios{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            column-gap: 24px;
+            padding: 0 32px;
+            .card{
+                height: 320px;
+                background: var(--50);
+                color: var(--950);
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+                padding: 0 24px;
+                text-align: justify;
+                .title-card{
+                    display: flex;
+                    column-gap: 8px;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .service{
+                    display: block;
+                }
+                .info-service{
+                    display: none;
+                }
+                
+
+            }
+            .card:hover{
+                transform: scale(1.1);
+                .service{
+                    display: none;
+                }
+                .info-service{
+                    display: block;
+                    animation: info-service 0.5s linear both;
+                    a{
+                        text-decoration: none;
+                        display: block;
+                        color: var(--50);
+                        text-align: center;
+                        background: var(--950);
+                        border-radius: 4px;
+                        padding: 4px;
+                    }
+                    a:hover{
+                        background: var(--50);
+                        color: var(--950);
+                        border: 1px solid;
+                    }
+                }
+                
+            }
+            img{
+                height: 32px;
+            }
+        }
+    }
+    #Especialista{
+        height: 520px;
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        justify-content: center;
+        column-gap: 64px;
+        color: var(--950);
+        text-align: justify; 
+        .content{
+            width: 60%;
+            max-height: 80%;
+        }
+        .perfil{
+            background-color: var(--50);
+            border-radius: 50% 0 50% 50%;
+        }
+    }
+    #Contacto{
+        height: 350px;
+        background: var(--950);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+        padding: 0 32px;
+        .imgs{
+            display: flex;
+            column-gap: 32px;
+            align-items: center;
+        }
+        .logo-contact{
+            height: 48px;
+            filter: invert(100%);
+        }
+        .rs-row{
+            position: relative;
+            top: 100px;
+            .rs{
+                height: 32px;
+                filter: invert(100%);
+            }
+        }
+        
+    }
+}
+footer{
+    height: 64px;
+    position: relative;
+    top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+    color: var(--950);
+    a{
+        text-decoration: none;
+        color: var(--400);
+    }
+}
+
+@keyframes title {
+    100%{
+        transform: translateX(0);
+    }
+    0%{
+        transform: translateX(100px);
+    }
+}
+
+@keyframes info-service {
+    100%{
+        transform: translateY(0)
+    }
+    0%{
+        transform: translateY(100px);
+    }
+}
+
+@media (max-width:766px) {
+    nav{
+        img {
+            padding-left: 16px;
+          }
+        ul{
+            padding-right: 16px;
+            column-gap: 8px;
+        }
+    }
+    main{
+        #Servicios{
+            height: 100%;
+            padding: 32px 0;
+            .servicios{
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 32px;
+            }
+        }
+        #Especialista {
+            column-gap: 16px;
+            .content {
+              max-height: 100%;
+            }
+            .perfil {
+                width: 50%;
+            }
+          }
+    }
+}
