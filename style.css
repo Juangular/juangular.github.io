@@ -82,7 +82,7 @@ main{
         display: flex;
         justify-content: end;
         color: var(--950);
-        background-image: url("/Assets/condominio5.jpg");
+        background-image: url("Assets/condominio5.jpg");
         background-position: bottom;
         background-attachment: fixed;
         background-size: cover;
