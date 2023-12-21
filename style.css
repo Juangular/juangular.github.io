@@ -1,12 +1,14 @@
 :root{
+    --1000: #000000;
+    --980: #3d3d3d;
     --950: #023864;
     --800: #005191;
     --600: #0078da;
     --400: #25b2ff;
     --200: #b3e2ff;
-    --50: #eff8ff;
+    --100: #ddf0ff;
     --sm: 16px;
-    --md: 20px;
+    --md: 22px;
     --lg: 28px;
 }
 
@@ -26,10 +28,10 @@ body{
         font-size: var(--lg);
     }
     h2{
-        font-size: var(--md);
+        font-size: var(--sm);
     }
     h3{
-        font-size: var(--sm);
+        font-size: var(--md);
     }
 }
 
@@ -59,12 +61,12 @@ nav{
         padding-right: 64px;
         a{
             text-decoration: none;
-            color: var(--950);
+            color: var(--980);
         }
         a:hover{
             padding: 4px;
-            border-radius: 4px;
-            border-bottom: 1px var(--950) solid;
+            /* border-radius: 4px; */
+            border-bottom: 3px var(--950) solid;
         }
     }
     button{
@@ -110,7 +112,7 @@ main{
         align-items: center;
         display: flex;
         justify-content: end;
-        color: var(--950);
+        color: var(--1000);
         background-image: url("Assets/condominio5.jpg");
         background-position: bottom;
         background-attachment: fixed;
@@ -124,22 +126,22 @@ main{
             width: 40%;
             padding-right: 16px;
             h2{
-                color: var(--800);
+                color: var(--980);
             }
             a{
                 text-decoration: none;
-                color: var(--950);
-                padding: 8px;
+                padding: 8px 0;
                 width: 40%;
                 border-radius: 4px;
-                margin: 16px 0 0 64px;
+                margin: 32px 0 0 64px;
                 text-align: center;
-                border: 1px solid;
-            }
-            a:hover{
-                color: var(--50);
+                color: white;
                 background: var(--950);
             }
+            /* a:hover{
+                color: 1000;
+                background: none;
+            } */
         }
         .title{
         }
@@ -154,8 +156,9 @@ main{
         height: 500px;
         justify-content: center;
         row-gap: 64px;
-        color: var(--950);
+        color: var(--1000);
         padding: 0 32px;
+        background-color: white;
         .especialidades{
             display: grid;
             grid-template-columns: repeat(3,1fr);
@@ -168,8 +171,11 @@ main{
                     .icon{
                         width: 8px;
                         height: 8px;
-                        background: var(--200);
+                        background: var(--950);
                     }
+                }
+                p{
+                    color: var(--980);
                 }
             }
         }
@@ -179,8 +185,8 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--950);
-        color: white;
+        background: var(--100);
+        color: var(--1000);
         flex-direction: column;
         row-gap: 64px;
         .servicios{
@@ -190,8 +196,8 @@ main{
             padding: 0 32px;
             .card{
                 height: 320px;
-                background: var(--50);
-                color: var(--950);
+                background: var(--100);
+                color: var(--1000);
                 justify-content: center;
                 display: flex;
                 flex-direction: column;
@@ -206,6 +212,7 @@ main{
                 }
                 .service{
                     display: block;
+                    color: var(--980);
                 }
                 .info-service{
                     display: none;
@@ -221,17 +228,18 @@ main{
                 .info-service{
                     display: block;
                     animation: info-service 0.5s linear both;
+                    color: var(--980);
                     a{
                         text-decoration: none;
                         display: block;
-                        color: var(--50);
+                        color: var(--100);
                         text-align: center;
                         background: var(--950);
                         border-radius: 4px;
                         padding: 4px;
                     }
                     a:hover{
-                        background: var(--50);
+                        background: var(--100);
                         color: var(--950);
                         border: 1px solid;
                     }
@@ -250,41 +258,51 @@ main{
         padding: 0 32px;
         justify-content: center;
         column-gap: 64px;
-        color: var(--950);
+        color: var(--1000);
         text-align: justify; 
         .content{
             width: 60%;
             max-height: 80%;
+            p{
+                color: var(--980);
+            }
+            .perfil-mobile{
+                background-color: var(--980);
+                border-radius: 8px;
+                display: none;
+                width: 320px;
+            }
         }
         .perfil{
-            background-color: var(--50);
-            border-radius: 50% 0 50% 50%;
+            background-color: var(--980);
+            border-radius: 8px;
+            width: 320px;
         }
     }
     #Contacto{
         height: 350px;
-        background: var(--950);
+        background: var(--100);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: var(--1000);
         flex-direction: column;
         padding: 0 32px;
         .imgs{
             display: flex;
-            column-gap: 32px;
+            column-gap: 128px;
             align-items: center;
         }
         .logo-contact{
             height: 48px;
-            filter: invert(100%);
+            /* filter: invert(100%); */
         }
         .rs-row{
             position: relative;
             top: 100px;
             .rs{
                 height: 32px;
-                filter: invert(100%);
+                /* filter: invert(100%); */
             }
         }
         
@@ -298,10 +316,10 @@ footer{
     align-items: center;
     justify-content: center;
     column-gap: 4px;
-    color: var(--950);
+    color: var(--1000);
     a{
         text-decoration: none;
-        color: var(--400);
+        color: var(--950);
     }
 }
 
@@ -375,13 +393,15 @@ footer{
                 padding: 0;
                 text-align: center;
                 a{
-                    margin: 0;
+                    margin: 32px 0 0 0;
                 }
             }
         }
         #Especialidades {
+            row-gap: 8px;
             .especialidades {
                 grid-template-columns: repeat(2,1fr);
+                grid-gap: 16px;
             }
           }
         #Servicios{
@@ -390,12 +410,25 @@ footer{
             .servicios{
                 grid-template-columns: repeat(1,1fr);
                 row-gap: 32px;
+                .card:hover{
+                    transform: none;
+                }
             }
         }
         #Especialista {
+            /* background-image: url(Assets/perfil.png); */
+            height: 100%;
             .content {
-              max-height: 100%;
-              width: 100%;
+                max-height: 100%;
+                width: 100%;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                row-gap: 16px;
+                padding: 16px 0;
+                .perfil-mobile{
+                    display: block;
+                }
             }
             .perfil {
                 display: none;
