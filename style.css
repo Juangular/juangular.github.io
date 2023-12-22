@@ -51,21 +51,20 @@ nav{
     z-index: 10;
     img{
         height: 48px;
-        padding-left: 64px;
+        padding-left: 32px;
         display: block;
     }
     .web{
         list-style: none;
         display: flex;
         column-gap: 16px;
-        padding-right: 64px;
+        padding-right: 32px;
         a{
             text-decoration: none;
             color: var(--980);
         }
         a:hover{
             padding: 4px;
-            /* border-radius: 4px; */
             border-bottom: 3px var(--950) solid;
         }
     }
@@ -82,10 +81,13 @@ nav{
     }
 }
 .mobile{
-    position: relative;
+    position: fixed;
     text-align: center;
     top: 64px;
     padding: 16px 0;
+    z-index: 99;
+    background: white;
+    width: 100%;
     li{
         padding: 4px 0;
         a{
@@ -106,7 +108,6 @@ nav{
 }
 main{
     position: relative;
-    top: 64px;
     #Inicio{
         height: 600px;
         align-items: center;
@@ -122,9 +123,8 @@ main{
             display: flex;
             flex-direction: column;
             align-items: center;
-            animation: title 0.6s linear both;
             width: 40%;
-            padding-right: 16px;
+            padding-right: 32px;
             h2{
                 color: var(--980);
             }
@@ -138,15 +138,17 @@ main{
                 color: white;
                 background: var(--950);
             }
-            /* a:hover{
-                color: 1000;
-                background: none;
-            } */
-        }
-        .title{
+            a::before{
+                box-shadow: 2px 4px 8px var(--980);
+            }
         }
         img{
             height: 300px;
+        }
+    }
+    #Inicio.on{
+        .title{
+            animation: title 0.6s linear both;
         }
     }
     #Especialidades{
@@ -185,18 +187,16 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--100);
         color: var(--1000);
         flex-direction: column;
         row-gap: 64px;
+        padding: 0 32px;
         .servicios{
             display: grid;
             grid-template-columns: repeat(4,1fr);
             column-gap: 24px;
-            padding: 0 32px;
             .card{
                 height: 320px;
-                background: var(--100);
                 color: var(--1000);
                 justify-content: center;
                 display: flex;
@@ -204,6 +204,7 @@ main{
                 border-radius: 8px;
                 padding: 0 24px;
                 text-align: justify;
+                box-shadow: 2px 4px 8px var(--100);
                 .title-card{
                     display: flex;
                     column-gap: 8px;
@@ -221,7 +222,7 @@ main{
 
             }
             .card:hover{
-                transform: scale(1.1);
+                transform: scale(1.05);
                 .service{
                     display: none;
                 }
@@ -232,16 +233,16 @@ main{
                     a{
                         text-decoration: none;
                         display: block;
-                        color: var(--100);
+                        color: var(--950);
                         text-align: center;
-                        background: var(--950);
+                        background: white;
                         border-radius: 4px;
                         padding: 4px;
+                        border: 1px solid var(--950);
                     }
                     a:hover{
-                        background: var(--100);
-                        color: var(--950);
-                        border: 1px solid;
+                        background: var(--950);
+                        color: white;
                     }
                 }
                 
@@ -256,7 +257,7 @@ main{
         display: flex;
         align-items: center;
         padding: 0 32px;
-        justify-content: center;
+        justify-content: space-between;
         column-gap: 64px;
         color: var(--1000);
         text-align: justify; 
@@ -267,14 +268,14 @@ main{
                 color: var(--980);
             }
             .perfil-mobile{
-                background-color: var(--980);
+                background-color: var(--100);
                 border-radius: 8px;
                 display: none;
                 width: 320px;
             }
         }
         .perfil{
-            background-color: var(--980);
+            background-color: var(--100);
             border-radius: 8px;
             width: 320px;
         }
@@ -288,6 +289,8 @@ main{
         color: var(--1000);
         flex-direction: column;
         padding: 0 32px;
+        border-radius: 16px;
+        margin: 0 16px;
         .imgs{
             display: flex;
             column-gap: 128px;
@@ -295,14 +298,12 @@ main{
         }
         .logo-contact{
             height: 48px;
-            /* filter: invert(100%); */
         }
         .rs-row{
             position: relative;
             top: 100px;
             .rs{
                 height: 32px;
-                /* filter: invert(100%); */
             }
         }
         
@@ -311,7 +312,6 @@ main{
 footer{
     height: 64px;
     position: relative;
-    top: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,12 +352,21 @@ footer{
         }
     }
     main{
+        #Inicio{
+            .title{
+                padding-right: 16px;
+            }
+        }
+        #Especialidades{
+            padding: 0 16px;
+        }
         #Servicios{
             height: 100%;
             padding: 32px 0;
             .servicios{
                 grid-template-columns: repeat(2,1fr);
                 row-gap: 32px;
+                padding: 0 16px;
             }
         }
         #Especialista {
@@ -386,6 +395,7 @@ footer{
         }
     }
     main{
+        top: 64px;
         #Inicio{
             justify-content: center;
             .title{
@@ -394,11 +404,13 @@ footer{
                 text-align: center;
                 a{
                     margin: 32px 0 0 0;
+                    width: 50%;
                 }
             }
         }
         #Especialidades {
             row-gap: 8px;
+            padding: 0 16px;
             .especialidades {
                 grid-template-columns: repeat(2,1fr);
                 grid-gap: 16px;
@@ -406,7 +418,6 @@ footer{
           }
         #Servicios{
             height: 100%;
-            padding: 32px 0;
             .servicios{
                 grid-template-columns: repeat(1,1fr);
                 row-gap: 32px;
@@ -416,8 +427,8 @@ footer{
             }
         }
         #Especialista {
-            /* background-image: url(Assets/perfil.png); */
             height: 100%;
+            padding-top: 32px;
             .content {
                 max-height: 100%;
                 width: 100%;
@@ -445,5 +456,8 @@ footer{
                 top: 60px;
             }
         }
+    }
+    footer{
+        top: 64px;
     }
 }
