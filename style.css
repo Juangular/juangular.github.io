@@ -7,6 +7,7 @@
     --400: #25b2ff;
     --200: #b3e2ff;
     --100: #ddf0ff;
+    --100-rgb: 221,240,255;
     --sm: 16px;
     --md: 22px;
     --lg: 28px;
@@ -132,14 +133,16 @@ main{
                 text-decoration: none;
                 padding: 8px 0;
                 width: 40%;
-                border-radius: 4px;
+                border-radius: 8px;
                 margin: 32px 0 0 64px;
                 text-align: center;
-                color: white;
-                background: var(--950);
+                color: var(--950);
+                /* background: var(--950); */
+                border: 1px solid var(--950);
             }
-            a::before{
-                box-shadow: 2px 4px 8px var(--980);
+            a:hover{
+                background-color: var(--950);
+                color: white;
             }
         }
         img{
@@ -195,33 +198,53 @@ main{
             display: grid;
             grid-template-columns: repeat(4,1fr);
             column-gap: 24px;
-            .card{
+            .card-padre{
+                /* background-image: url(Assets/condominio5.jpg); */
                 height: 320px;
-                color: var(--1000);
-                justify-content: center;
-                display: flex;
-                flex-direction: column;
                 border-radius: 8px;
-                padding: 0 24px;
-                text-align: justify;
-                box-shadow: 2px 4px 8px var(--100);
-                .title-card{
+                background-size: cover;
+                background-position: center;
+                cursor: pointer;
+                box-shadow: 4px 4px 4px var(--100);
+                .first-div{
+                    height: 50%;
+                }
+                .card{
+                    padding: 0 24px;
+                    color: var(--1000);
+                    /* justify-content: center;
                     display: flex;
-                    column-gap: 8px;
-                    justify-content: center;
-                    align-items: center;
+                    flex-direction: column; */
+                    text-align: justify;
+                    /* box-shadow: 2px 4px 8px var(--100); */
+                    height: 50%;
+                    background-color: rgba(var(--100-rgb), 0.8);
+                    border-radius: 0 0 8px 8px;
+                    .title-card{
+                        display: flex;
+                        column-gap: 8px;
+                        justify-content: center;
+                        align-items: center;
+                        padding-top: 8px;
+                    }
+                    .service{
+                        display: block;
+                        color: var(--980);
+                    }
+                    .info-service{
+                        display: none;
+                    }
+                    
+    
                 }
-                .service{
-                    display: block;
-                    color: var(--980);
-                }
-                .info-service{
-                    display: none;
-                }
-                
-
             }
-            .card:hover{
+            .card-padre:hover{
+                .first-div{
+                    height: 0%;
+                }
+                .card{
+                    height: 100%;
+                }
                 transform: scale(1.05);
                 .service{
                     display: none;
@@ -230,13 +253,14 @@ main{
                     display: block;
                     animation: info-service 0.5s linear both;
                     color: var(--980);
+                    padding-top: 8px;
                     a{
                         text-decoration: none;
                         display: block;
                         color: var(--950);
                         text-align: center;
-                        background: white;
-                        border-radius: 4px;
+                        /* background: white; */
+                        border-radius: 8px;
                         padding: 4px;
                         border: 1px solid var(--950);
                     }
@@ -278,30 +302,47 @@ main{
             background-color: var(--100);
             border-radius: 8px;
             width: 320px;
+            cursor: pointer;
         }
     }
     #Contacto{
         height: 350px;
-        background: var(--100);
+        background: linear-gradient(var(--100),white);
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         color: var(--1000);
-        flex-direction: column;
+        /* flex-direction: column; */
         padding: 0 32px;
         border-radius: 16px;
-        margin: 0 16px;
+        /* margin: 0 16px; */
         .imgs{
-            display: flex;
+            /* display: flex;
             column-gap: 128px;
-            align-items: center;
+            align-items: center; */
+            .icon-contact{
+                display: flex;
+                column-gap: 8px;
+                align-items: center;
+                margin-bottom: 4px;
+                .icons{
+                    width: 32px;
+                    cursor: pointer;
+                }
+            }
+            /* p{
+                margin-bottom: 4px;
+            } */
         }
         .logo-contact{
             height: 48px;
+            margin-bottom: 16px;
         }
         .rs-row{
-            position: relative;
-            top: 100px;
+            /* position: relative;
+            top: 80px; */
+            display: flex;
+            flex-direction: column;
             .rs{
                 height: 32px;
             }
@@ -334,7 +375,7 @@ footer{
 
 @keyframes info-service {
     100%{
-        transform: translateY(0)
+        transform: translateY(0);        
     }
     0%{
         transform: translateY(100px);
@@ -446,6 +487,7 @@ footer{
             }
         }
         #Contacto {
+            flex-direction: column;
             .logo-contact{
                 padding-bottom: 8px;
             }
@@ -453,11 +495,14 @@ footer{
                 display: block;
             }
             .rs-row{
-                top: 60px;
+                display: block;
             }
         }
     }
     footer{
         top: 64px;
+        display: block;
+        padding: 16px 0;
+        text-align: center;
     }
 }
