@@ -51,7 +51,7 @@ nav{
     top: 0;
     z-index: 10;
     img{
-        height: 48px;
+        height: 40px;
         padding-left: 32px;
         display: block;
     }
@@ -128,6 +128,7 @@ main{
             padding-right: 32px;
             h2{
                 color: var(--980);
+                font-weight: 400;
             }
             a{
                 text-decoration: none;
@@ -222,10 +223,8 @@ main{
                     border-radius: 0 0 8px 8px;
                     .title-card{
                         display: flex;
-                        column-gap: 8px;
                         justify-content: center;
-                        align-items: center;
-                        padding-top: 8px;
+                        padding-top: 16px;
                     }
                     .service{
                         display: block;
@@ -259,9 +258,8 @@ main{
                         display: block;
                         color: var(--950);
                         text-align: center;
-                        /* background: white; */
                         border-radius: 8px;
-                        padding: 4px;
+                        padding: 8px 0;
                         border: 1px solid var(--950);
                     }
                     a:hover{
@@ -288,6 +286,10 @@ main{
         .content{
             width: 60%;
             max-height: 80%;
+            color: var(--980);
+            h2{
+                font-weight: 380;
+            }
             p{
                 color: var(--980);
             }
@@ -296,6 +298,18 @@ main{
                 border-radius: 8px;
                 display: none;
                 width: 320px;
+            }
+            a{
+                text-decoration: none;
+                color: var(--950);
+                font-size: 18px;
+            }
+            .flecha{
+                width: 20px;
+            }
+            .content-bottom{
+                display: flex;
+                align-items: center;
             }
         }
         .perfil{
@@ -326,7 +340,7 @@ main{
                 align-items: center;
                 margin-bottom: 4px;
                 .icons{
-                    width: 32px;
+                    width: 20px;
                     cursor: pointer;
                 }
             }
@@ -335,7 +349,7 @@ main{
             } */
         }
         .logo-contact{
-            height: 48px;
+            height: 40px;
             margin-bottom: 16px;
         }
         .rs-row{
@@ -345,6 +359,9 @@ main{
             flex-direction: column;
             .rs{
                 height: 32px;
+            }
+            .rs:hover{
+                transform: scale(1.2);
             }
         }
         
@@ -366,10 +383,10 @@ footer{
 
 @keyframes title {
     100%{
-        transform: translateX(0);
+        transform: translateY(0);
     }
     0%{
-        transform: translateX(100px);
+        transform: translateY(100px);
     }
 }
 

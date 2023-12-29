@@ -1,14 +1,14 @@
 const menu = document.querySelector(".menu");
 const mobile = document.querySelector(".mobile");
 var inicio = document.querySelector(".inicio");
-var especialidades = document.querySelector(".especialidades");
+// var especialidades = document.querySelector(".especialidades");
 var servicios = document.querySelector(".servicios");
 var especialista = document.querySelector(".especialista");
 var contacto = document.querySelector(".contacto");
 
 menu.addEventListener('click',toggleMenuNav);
 inicio.addEventListener('click',addMenuNav);
-especialidades.addEventListener('click',addMenuNav);
+// especialidades.addEventListener('click',addMenuNav);
 servicios.addEventListener('click',addMenuNav);
 especialista.addEventListener('click',addMenuNav);
 contacto.addEventListener('click',addMenuNav);
@@ -18,7 +18,6 @@ function toggleMenuNav(){
 }
 
 function addMenuNav(){
-    console.log("ex");
     mobile.classList.add('inactive');
 }
 
@@ -37,18 +36,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para manejar el evento de scroll
     function manejarScroll() {
         var Inicio = document.getElementById("Inicio");
-        var Especialidades = document.getElementById("Especialidades");
+        // var Especialidades = document.getElementById("Especialidades");
         var Servicios = document.getElementById("Servicios");
         var Especialista = document.getElementById("Especialista");
         var Contacto = document.getElementById("Contacto");
         // var miSeccion = document.querySelector(".title");
 
         if (estaEnElArea(Inicio)) {
+            console.log("as");
             Inicio.classList.add("on");
         }
-        if (estaEnElArea(Especialidades)) {
-            Inicio.classList.remove("on");
-        }
+        // if (estaEnElArea(Especialidades)) {
+        //     Inicio.classList.remove("on");
+        // }
         if (estaEnElArea(Servicios)) {
             Inicio.classList.remove("on");
         }
